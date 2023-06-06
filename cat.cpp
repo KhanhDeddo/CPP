@@ -19,12 +19,32 @@ class Cat{
             c.weight=this->weight+that.weight;
             return c;
         }
-        Cat operator+(int w){
+        Cat operator+(int a){
             Cat c;
             c.name=this->name+" con";
-            c.age=this->age;
-            c.weight=this->weight+w;
+            c.age=this->age+a;
+            c.weight=this->weight;
             return c;
+        }
+        Cat operator++(int){
+            this->weight+=1;
+            return *this;
+        }
+        Cat &operator++(){
+            this->weight+=1;
+            return *this;
+        }
+        Cat operator--(int){
+            this->weight-=1;
+            return *this;
+        }
+        Cat &operator--(){
+            this->weight-=1;
+            return *this;
+        }
+        void operator==(const Cat &that){
+            if(this->age==that.age){cout<<"Yes\n";}
+            else{cout<<"No\n";}
         }
         string getName(){return name;}
         int getAge(){return age;}
@@ -32,6 +52,7 @@ class Cat{
         int getCount(){return count;}
 };
 int Cat::count = 0;
+
 int main(){
     system("cls");
     Cat c1("Tom",1,2),c2("Bibi",2,3);
@@ -41,6 +62,12 @@ int main(){
     cout<<c2.getName()<<" "<<c2.getAge()<<" "<<(c2).getWeight()<<endl;
     cout<<(c1+c2).getName()<<" "<<(c1+c2).getAge()<<" "<<(c1+c2).getWeight()<<endl;
     cout<<(c1+10).getName()<<" "<<(c1+10).getAge()<<" "<<(c1+10).getWeight()<<endl;
-    cout<<c3.getName()<<" "<<c3.getAge()<<" "<<(c3).getWeight()<<endl;
+    cout<<(c2++).getWeight()<<endl;
+    cout<<(++c2).getWeight()<<endl;
+    cout<<(c2--).getWeight()<<endl;
+    cout<<(--c2).getWeight()<<endl;
+    c1==c2;
+    c2==c1+1;
+    c1==c3;
     return 0;
 }
