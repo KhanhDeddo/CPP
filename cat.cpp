@@ -6,9 +6,6 @@ class Cat{
         int number,age,weight;
         int sumW=0;
     public:
-        Cat(){}
-        Cat(string name, int age, int weight): name(name), age(age), weight(weight){}
-        ~Cat(){}
     friend istream &operator>>(istream &in,Cat &c){
         cout<<"nhap ten: ";in>>c.name;
         cout<<"nhap tuoi: ";in>>c.age;
