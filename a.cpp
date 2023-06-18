@@ -22,9 +22,9 @@ class ProductionWorker : public Employee{
         int ca_lam,so_ngay_lam;
         float luong,luong_theo_gio;
         void salary(){
-            luong=so_ngay_lam*ca_lam*luong_theo_gio;
+            luong=so_ngay_lam*8*luong_theo_gio;
         }
-        int check(int cl,float ltg){
+        float check(int cl,float ltg){
             float luong_theo_gio;
             if(cl==1){
                 luong_theo_gio=ltg;
@@ -73,7 +73,7 @@ class ProductionWorker : public Employee{
 };
 int main(){  
     //ProductionWorker p1("Ten","Mã nhan vien","Ngay thue","So ngay lam","Ca làm 1 hoăc 2","Lương theo giờ");
-    ProductionWorker p1("Tao","A45844",1,26,2,5);
+    ProductionWorker p1("Tao","A45844",1,1,2,5);
     cout<<p1;
     return 0;
 }
