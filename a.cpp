@@ -26,7 +26,7 @@ class ProductionWorker : public Employee{
         int check(int cl,float mucltg){
             float mltg;
             if(cl==1){mltg=mucltg;}
-            else if(cl==2){mltg=0.5*mucltg;}
+            else if(cl==2){mltg=1.5*mucltg;}
             return mltg;
         }
         void salary(){luong=soNgay*caLam*mucLuongtheogio;}
