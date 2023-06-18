@@ -9,7 +9,7 @@ class Employee{
       Employee(string name, string maSo, int ngayThue ){
           this->name = name;
           this->maSo = maSo;
-          setngayThue(ngayThue);
+          this->ngayThue = ngayThue;
       }
       void setName(string name){this->name = name;}
       string getName(){return this->name;}
@@ -35,7 +35,6 @@ class ProductionWorker : public Employee{
             this->caLam=cl;
             this->soNgay=soNgay;
             this->mucLuongtheogio=check(caLam,mltg);
-
             salary();
         }
         float getLuong(){return luong;}
